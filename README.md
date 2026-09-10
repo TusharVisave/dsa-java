@@ -1,0 +1,11 @@
+# DSA Java
+
+A structured collection of Data Structures and Algorithms problems implemented in Java.
+
+## Problems Solved
+
+| Problem | Difficulty | Pattern | Link |
+|---|---|---|---|
+| Two Sum | Easy | HashMap | [Solution](src/main/java/com/Tushar/dsa_java/arrays/twosum/) |
+| Best Time to Buy and Sell Stock | Easy | Greedy | [Solution](src/main/java/com/Tushar/dsa_java/arrays/besttimebuyandsellstock/) |
+| Maximum Subarray | Medium | Kadane's Algorithm | [Solution](src/main/java/com/Tushar/dsa_java/arrays/maximumsubarray/) |
