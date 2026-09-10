@@ -1,4 +1,4 @@
-package com.Tushar.dsa_java.arrays.maximumsubarray;
+package com.Tushar.dsajava.arrays.maximumsubarray;
 
 public class Solution {
 

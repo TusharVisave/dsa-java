@@ -1,4 +1,4 @@
-package com.Tushar.dsa_java.arrays.twosum;
+package com.Tushar.dsajava.arrays.twosum;
 
 import java.util.HashMap;
 import java.util.Map;

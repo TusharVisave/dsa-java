@@ -1,4 +1,4 @@
-package com.Tushar.dsa_java.arrays.besttimebuyandsellstock;
+package com.Tushar.dsajava.arrays.besttimebuyandsellstock;
 
 
 public class Solution {

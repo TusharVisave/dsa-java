@@ -1,4 +1,4 @@
-package com.Tushar.dsa_java.arrays.twosum;
+package com.Tushar.dsajava.arrays.twosum;
 
 import org.junit.jupiter.api.Test;
 
@@ -58,6 +58,26 @@ class TwoSumTest {
         assertArrayEquals(
                 new int[]{-1, -1},
                 Solution.twoSum(nums, 10)
+        );
+    }
+    @Test
+    void shouldHandleDuplicateValues() {
+
+        int[] nums = {3, 3};
+
+        assertArrayEquals(
+                new int[]{0, 1},
+                Solution.twoSum(nums, 6)
+        );
+    }
+    @Test
+    void shouldHandleNegativeNumbers() {
+
+        int[] nums = {-3, 4, 3, 90};
+
+        assertArrayEquals(
+                new int[]{0, 2},
+                Solution.twoSum(nums, 0)
         );
     }
 }
