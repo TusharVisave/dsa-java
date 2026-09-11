@@ -1,4 +1,4 @@
-package com.Tushar.dsa_java.strings.validanagram;
+package com.Tushar.dsajava.strings.validanagram;
 
 import org.junit.jupiter.api.Test;
 

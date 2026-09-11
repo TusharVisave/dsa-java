@@ -1,4 +1,4 @@
-package com.Tushar.dsa_java.strings.validanagram;
+package com.Tushar.dsajava.strings.validanagram;
 
 import java.util.HashMap;
 import java.util.Map;

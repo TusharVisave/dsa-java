@@ -1,4 +1,4 @@
-package com.Tushar.dsa_java.strings.validpalindrome;
+package com.Tushar.dsajava.strings.validpalindrome;
 
 import org.junit.jupiter.api.Test;
 
