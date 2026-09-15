@@ -21,13 +21,15 @@ The repository follows a progressive approach from fundamental array problems to
 
 # 📚 Problems
 
-|  # | Problem                         | Difficulty | Pattern            | Solution                                                                         |
-| -: | ------------------------------- | ---------- | ------------------ | -------------------------------------------------------------------------------- |
-|  1 | Two Sum                         | Easy       | Hash Map           | [View Solution](src/main/java/com/Tushar/dsajava/arrays/twosum)                  |
-|  2 | Best Time to Buy and Sell Stock | Easy       | One Pass           | [View Solution](src/main/java/com/Tushar/dsajava/arrays/besttimebuyandsellstock) |
-|  3 | Maximum Subarray                | Medium     | Kadane's Algorithm | [View Solution](src/main/java/com/Tushar/dsajava/arrays/maximumsubarray)         |
-|  4 | Valid Anagram                   | Easy       | Frequency Map      | [View Solution](src/main/java/com/Tushar/dsajava/strings/validanagram)           |
-|  5 | Valid Palindrome                | Easy       | Two Pointers       | [View Solution](src/main/java/com/Tushar/dsajava/strings/validpalindrome)        |
+|  # | Problem                         | Difficulty | Pattern            | Solution                                                                            |
+| -: | -------------------------------- | ---------- | ------------------- | ------------------------------------------------------------------------------------ |
+|  1 | Two Sum                          | Easy       | Hash Map             | [View Solution](src/main/java/com/Tushar/dsajava/arrays/twosum)                     |
+|  2 | Best Time to Buy and Sell Stock  | Easy       | One Pass             | [View Solution](src/main/java/com/Tushar/dsajava/arrays/besttimebuyandsellstock)     |
+|  3 | Maximum Subarray                 | Medium     | Kadane's Algorithm   | [View Solution](src/main/java/com/Tushar/dsajava/arrays/maximumsubarray)             |
+|  4 | Contains Duplicate                | Easy       | Hash Set             | [View Solution](src/main/java/com/Tushar/dsajava/arrays/containsduplicate)           |
+|  5 | Product of Array Except Self      | Medium     | Prefix / Suffix Product | [View Solution](src/main/java/com/Tushar/dsajava/arrays/productofarrayexceptself) |
+|  6 | Valid Anagram                     | Easy       | Frequency Map        | [View Solution](src/main/java/com/Tushar/dsajava/strings/validanagram)              |
+|  7 | Valid Palindrome                  | Easy       | Two Pointers         | [View Solution](src/main/java/com/Tushar/dsajava/strings/validpalindrome)           |
 
 ---
 
@@ -58,6 +60,23 @@ Used to find the maximum sum of a contiguous subarray efficiently.
 **Problem:**
 
 * Maximum Subarray
+
+### Hash Set
+
+Detects duplicates in a single traversal using constant-time lookups.
+
+**Problem:**
+
+* Contains Duplicate
+
+### Prefix / Suffix Product
+
+Builds the answer using two passes — a running product from the left, then a running
+product from the right — to avoid division and stay at O(n) time.
+
+**Problem:**
+
+* Product of Array Except Self
 
 ---
 
@@ -96,13 +115,22 @@ dsa-java/
 │   │                   ├── arrays/
 │   │                   │   ├── twosum/
 │   │                   │   │   ├── Solution.java
+│   │                   │   │   ├── BruteForceSolution.java
 │   │                   │   │   └── README.md
 │   │                   │   │
 │   │                   │   ├── besttimebuyandsellstock/
 │   │                   │   │   ├── Solution.java
 │   │                   │   │   └── README.md
 │   │                   │   │
-│   │                   │   └── maximumsubarray/
+│   │                   │   ├── maximumsubarray/
+│   │                   │   │   ├── Solution.java
+│   │                   │   │   └── README.md
+│   │                   │   │
+│   │                   │   ├── containsduplicate/
+│   │                   │   │   ├── Solution.java
+│   │                   │   │   └── README.md
+│   │                   │   │
+│   │                   │   └── productofarrayexceptself/
 │   │                   │       ├── Solution.java
 │   │                   │       └── README.md
 │   │                   │
@@ -175,12 +203,13 @@ Tests cover:
 * Edge cases
 * Empty input
 * Single-element/single-character input
+* Zero and negative values (where applicable)
 * Invalid input scenarios where applicable
 
 Run all tests using:
 
 ```bash
-mvn test
+./mvnw test
 ```
 
 Expected result:
@@ -202,7 +231,9 @@ BUILD SUCCESS
 
 **Pattern:** Hash Map
 
-Finds two numbers in an array whose sum equals a given target.
+Finds two numbers in an array whose sum equals a given target. Both a brute-force
+(O(n²)) and an optimized hash-map version (O(n)) are implemented, to make the
+before/after trade-off explicit.
 
 **Key idea:**
 
@@ -255,7 +286,55 @@ Space → O(1)
 
 ---
 
-## 4. Valid Anagram
+## 4. Contains Duplicate
+
+**Pattern:** Hash Set
+
+Determines whether any value appears more than once in an array.
+
+**Key idea:**
+
+Add each number to a hash set; if a number is already present, a duplicate exists.
+
+**Complexity:**
+
+```text
+Time  → O(n)
+Space → O(n)
+```
+
+---
+
+## 5. Product of Array Except Self
+
+**Pattern:** Prefix / Suffix Product
+
+Returns an array where each element equals the product of all other elements,
+without using division.
+
+**Key idea:**
+
+Traverse the array once left-to-right, building a running prefix product per index.
+Then traverse right-to-left, multiplying in a running suffix product. This combines
+both halves in two linear passes.
+
+**Complexity:**
+
+```text
+Time  → O(n)
+Space → O(1) extra, excluding the output array
+```
+
+### Important Edge Cases
+
+* Array containing a single zero
+* Array containing multiple zeros
+* Negative numbers
+* Single-element and two-element arrays
+
+---
+
+## 6. Valid Anagram
 
 **Pattern:** Frequency Map
 
@@ -285,7 +364,7 @@ where `k` represents the number of distinct characters.
 
 ---
 
-## 5. Valid Palindrome
+## 7. Valid Palindrome
 
 **Pattern:** Two Pointers
 
@@ -346,13 +425,15 @@ false
 
 # 📊 Complexity Summary
 
-| Problem                         | Time | Space | Pattern            |
-| ------------------------------- | ---: | ----: | ------------------ |
-| Two Sum                         | O(n) |  O(n) | Hash Map           |
-| Best Time to Buy and Sell Stock | O(n) |  O(1) | One Pass           |
-| Maximum Subarray                | O(n) |  O(1) | Kadane's Algorithm |
-| Valid Anagram                   | O(n) |  O(k) | Frequency Map      |
-| Valid Palindrome                | O(n) |  O(1) | Two Pointers       |
+| Problem                         |  Time |  Space | Pattern                 |
+| -------------------------------- | ----: | -----: | ------------------------ |
+| Two Sum                          |  O(n) |   O(n) | Hash Map                 |
+| Best Time to Buy and Sell Stock  |  O(n) |   O(1) | One Pass                 |
+| Maximum Subarray                 |  O(n) |   O(1) | Kadane's Algorithm       |
+| Contains Duplicate                |  O(n) |   O(n) | Hash Set                 |
+| Product of Array Except Self      |  O(n) |   O(1) | Prefix / Suffix Product  |
+| Valid Anagram                     |  O(n) |   O(k) | Frequency Map            |
+| Valid Palindrome                  |  O(n) |   O(1) | Two Pointers             |
 
 ---
 
@@ -408,6 +489,8 @@ Advanced Algorithms
 * [x] Two Sum
 * [x] Best Time to Buy and Sell Stock
 * [x] Maximum Subarray
+* [x] Contains Duplicate
+* [x] Product of Array Except Self
 
 ### Strings
 
