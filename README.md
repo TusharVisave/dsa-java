@@ -21,15 +21,17 @@ The repository follows a progressive approach from fundamental array problems to
 
 # 📚 Problems
 
-|  # | Problem                         | Difficulty | Pattern            | Solution                                                                            |
-| -: | -------------------------------- | ---------- | ------------------- | ------------------------------------------------------------------------------------ |
-|  1 | Two Sum                          | Easy       | Hash Map             | [View Solution](src/main/java/com/Tushar/dsajava/arrays/twosum)                     |
-|  2 | Best Time to Buy and Sell Stock  | Easy       | One Pass             | [View Solution](src/main/java/com/Tushar/dsajava/arrays/besttimebuyandsellstock)     |
-|  3 | Maximum Subarray                 | Medium     | Kadane's Algorithm   | [View Solution](src/main/java/com/Tushar/dsajava/arrays/maximumsubarray)             |
-|  4 | Contains Duplicate                | Easy       | Hash Set             | [View Solution](src/main/java/com/Tushar/dsajava/arrays/containsduplicate)           |
-|  5 | Product of Array Except Self      | Medium     | Prefix / Suffix Product | [View Solution](src/main/java/com/Tushar/dsajava/arrays/productofarrayexceptself) |
-|  6 | Valid Anagram                     | Easy       | Frequency Map        | [View Solution](src/main/java/com/Tushar/dsajava/strings/validanagram)              |
-|  7 | Valid Palindrome                  | Easy       | Two Pointers         | [View Solution](src/main/java/com/Tushar/dsajava/strings/validpalindrome)           |
+|  # | Problem                         | Difficulty | Pattern                    | Solution                                                                                  |
+| -: | -------------------------------- | ---------- | -------------------------- | ------------------------------------------------------------------------------------------ |
+|  1 | Two Sum                          | Easy       | Hash Map                   | [View Solution](src/main/java/com/Tushar/dsajava/arrays/twosum)                           |
+|  2 | Best Time to Buy and Sell Stock  | Easy       | One Pass                   | [View Solution](src/main/java/com/Tushar/dsajava/arrays/besttimebuyandsellstock)           |
+|  3 | Maximum Subarray                 | Medium     | Kadane's Algorithm         | [View Solution](src/main/java/com/Tushar/dsajava/arrays/maximumsubarray)                  |
+|  4 | Contains Duplicate               | Easy       | Hash Set                   | [View Solution](src/main/java/com/Tushar/dsajava/arrays/containsduplicate)                |
+|  5 | Product of Array Except Self     | Medium     | Prefix / Suffix Product    | [View Solution](src/main/java/com/Tushar/dsajava/arrays/productofarrayexceptself)         |
+|  6 | Top K Frequent Elements          | Medium     | HashMap + Bucket Sort      | [View Solution](src/main/java/com/Tushar/dsajava/arrays/topkfrequentelements)             |
+|  7 | Valid Anagram                    | Easy       | Frequency Map              | [View Solution](src/main/java/com/Tushar/dsajava/strings/validanagram)                    |
+|  8 | Group Anagrams                   | Medium     | HashMap + Character Freq.  | [View Solution](src/main/java/com/Tushar/dsajava/strings/groupanagrams)                   |
+|  9 | Valid Palindrome                 | Easy       | Two Pointers               | [View Solution](src/main/java/com/Tushar/dsajava/strings/validpalindrome)                 |
 
 ---
 
@@ -78,6 +80,15 @@ product from the right — to avoid division and stay at O(n) time.
 
 * Product of Array Except Self
 
+### HashMap + Bucket Sort
+
+Counts element frequencies using a HashMap, then uses a bucket array (indexed by frequency)
+to retrieve the top‑k elements in O(n) time without sorting or a heap.
+
+**Problem:**
+
+* Top K Frequent Elements
+
 ---
 
 ## Strings
@@ -89,6 +100,15 @@ Counts character frequencies to compare the composition of two strings.
 **Problem:**
 
 * Valid Anagram
+
+### HashMap + Character Frequency
+
+Builds a canonical signature from character frequencies and uses a HashMap to bucket
+strings that share the same signature.
+
+**Problem:**
+
+* Group Anagrams
 
 ### Two Pointers
 
@@ -130,12 +150,20 @@ dsa-java/
 │   │                   │   │   ├── Solution.java
 │   │                   │   │   └── README.md
 │   │                   │   │
-│   │                   │   └── productofarrayexceptself/
+│   │                   │   ├── productofarrayexceptself/
+│   │                   │   │   ├── Solution.java
+│   │                   │   │   └── README.md
+│   │                   │   │
+│   │                   │   └── topkfrequentelements/
 │   │                   │       ├── Solution.java
 │   │                   │       └── README.md
 │   │                   │
 │   │                   └── strings/
 │   │                       ├── validanagram/
+│   │                       │   ├── Solution.java
+│   │                       │   └── README.md
+│   │                       │
+│   │                       ├── groupanagrams/
 │   │                       │   ├── Solution.java
 │   │                       │   └── README.md
 │   │                       │
@@ -334,7 +362,34 @@ Space → O(1) extra, excluding the output array
 
 ---
 
-## 6. Valid Anagram
+## 6. Top K Frequent Elements
+
+**Pattern:** HashMap + Bucket Sort
+
+Returns the `k` most frequently occurring elements from an integer array.
+
+**Key idea:**
+
+Count element frequencies with a HashMap, then use a bucket array indexed by frequency.
+Iterate the buckets from high to low, collecting elements until `k` are found.
+
+**Complexity:**
+
+```text
+Time  → O(n)
+Space → O(n)
+```
+
+### Important Edge Cases
+
+* `k` equals the number of unique elements
+* Single-element array
+* Negative numbers
+* All elements have equal frequency
+
+---
+
+## 7. Valid Anagram
 
 **Pattern:** Frequency Map
 
@@ -364,7 +419,36 @@ where `k` represents the number of distinct characters.
 
 ---
 
-## 7. Valid Palindrome
+## 8. Group Anagrams
+
+**Pattern:** HashMap + Character Frequency
+
+Groups strings that are anagrams of each other into separate lists.
+
+**Key idea:**
+
+For each string, build a 26-character frequency array and encode it as a canonical key.
+All anagrams share the same key and are grouped under the same HashMap entry.
+
+**Complexity:**
+
+```text
+Time  → O(n · m)
+Space → O(n · m)
+```
+
+where `n` is the number of strings and `m` is the average string length.
+
+### Important Edge Cases
+
+* Empty input array
+* Single word
+* All words are anagrams of each other
+* No words share characters
+
+---
+
+## 9. Valid Palindrome
 
 **Pattern:** Two Pointers
 
@@ -425,15 +509,17 @@ false
 
 # 📊 Complexity Summary
 
-| Problem                         |  Time |  Space | Pattern                 |
-| -------------------------------- | ----: | -----: | ------------------------ |
-| Two Sum                          |  O(n) |   O(n) | Hash Map                 |
-| Best Time to Buy and Sell Stock  |  O(n) |   O(1) | One Pass                 |
-| Maximum Subarray                 |  O(n) |   O(1) | Kadane's Algorithm       |
-| Contains Duplicate                |  O(n) |   O(n) | Hash Set                 |
-| Product of Array Except Self      |  O(n) |   O(1) | Prefix / Suffix Product  |
-| Valid Anagram                     |  O(n) |   O(k) | Frequency Map            |
-| Valid Palindrome                  |  O(n) |   O(1) | Two Pointers             |
+| Problem                         |    Time |    Space | Pattern                    |
+| -------------------------------- | ------: | -------: | -------------------------- |
+| Two Sum                          |    O(n) |     O(n) | Hash Map                   |
+| Best Time to Buy and Sell Stock  |    O(n) |     O(1) | One Pass                   |
+| Maximum Subarray                 |    O(n) |     O(1) | Kadane's Algorithm         |
+| Contains Duplicate               |    O(n) |     O(n) | Hash Set                   |
+| Product of Array Except Self     |    O(n) |     O(1) | Prefix / Suffix Product    |
+| Top K Frequent Elements          |    O(n) |     O(n) | HashMap + Bucket Sort      |
+| Valid Anagram                    |    O(n) |     O(k) | Frequency Map              |
+| Group Anagrams                   | O(n·m)  |   O(n·m) | HashMap + Char. Frequency  |
+| Valid Palindrome                 |    O(n) |     O(1) | Two Pointers               |
 
 ---
 
@@ -491,10 +577,12 @@ Advanced Algorithms
 * [x] Maximum Subarray
 * [x] Contains Duplicate
 * [x] Product of Array Except Self
+* [x] Top K Frequent Elements
 
 ### Strings
 
 * [x] Valid Anagram
+* [x] Group Anagrams
 * [x] Valid Palindrome
 
 ### Upcoming
