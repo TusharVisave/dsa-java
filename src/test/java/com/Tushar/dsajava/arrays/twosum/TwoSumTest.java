@@ -1,12 +1,15 @@
 package com.Tushar.dsajava.arrays.twosum;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
+@DisplayName("Two Sum")
 class TwoSumTest {
 
     @Test
+    @DisplayName("should find two numbers using optimized (hash map) solution")
     void shouldFindTwoNumbersUsingOptimizedSolution() {
 
         int[] nums = {2, 7, 11, 15};
@@ -18,6 +21,7 @@ class TwoSumTest {
     }
 
     @Test
+    @DisplayName("should find two numbers using brute-force solution")
     void shouldFindTwoNumbersUsingBruteForceSolution() {
 
         int[] nums = {2, 7, 11, 15};
@@ -29,6 +33,7 @@ class TwoSumTest {
     }
 
     @Test
+    @DisplayName("should handle single-element array")
     void shouldHandleSingleElement() {
 
         int[] nums = {5};
@@ -40,6 +45,7 @@ class TwoSumTest {
     }
 
     @Test
+    @DisplayName("should handle empty array")
     void shouldHandleEmptyArray() {
 
         int[] nums = {};
@@ -51,6 +57,7 @@ class TwoSumTest {
     }
 
     @Test
+    @DisplayName("should handle no valid pair")
     void shouldHandleNoValidPair() {
 
         int[] nums = {1, 2, 3};
@@ -61,6 +68,7 @@ class TwoSumTest {
         );
     }
     @Test
+    @DisplayName("should handle duplicate values")
     void shouldHandleDuplicateValues() {
 
         int[] nums = {3, 3};
@@ -71,6 +79,7 @@ class TwoSumTest {
         );
     }
     @Test
+    @DisplayName("should handle negative numbers")
     void shouldHandleNegativeNumbers() {
 
         int[] nums = {-3, 4, 3, 90};

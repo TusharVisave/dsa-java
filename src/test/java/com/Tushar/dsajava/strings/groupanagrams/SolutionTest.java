@@ -1,5 +1,6 @@
 package com.Tushar.dsajava.strings.groupanagrams;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashSet;
@@ -8,11 +9,13 @@ import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@DisplayName("Group Anagrams")
 class SolutionTest {
 
     private final Solution solution = new Solution();
 
     @Test
+    @DisplayName("should group anagrams together")
     void shouldGroupAnagrams() {
 
         String[] input = {
@@ -43,6 +46,7 @@ class SolutionTest {
     }
 
     @Test
+    @DisplayName("should handle empty input array")
     void shouldHandleEmptyInput() {
 
         String[] input = {};
@@ -54,6 +58,7 @@ class SolutionTest {
     }
 
     @Test
+    @DisplayName("should handle single word")
     void shouldHandleSingleWord() {
 
         String[] input = {
