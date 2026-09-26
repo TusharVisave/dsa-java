@@ -2,7 +2,7 @@
 
 A structured collection of **Data Structures and Algorithms problems implemented in Java**, focused on building strong problem-solving skills, understanding common DSA patterns, and writing clean, testable code.
 
-The repository follows a progressive approach from fundamental array problems to string-based patterns and will continue toward more advanced data structures and algorithms.
+The repository follows a progressive approach from fundamental array problems to string-based patterns, linked lists, stacks, and will continue toward trees, graphs, and dynamic programming.
 
 ---
 
@@ -21,17 +21,25 @@ The repository follows a progressive approach from fundamental array problems to
 
 # 📚 Problems
 
-|  # | Problem                         | Difficulty | Pattern                    | Solution                                                                                  |
-| -: | -------------------------------- | ---------- | -------------------------- | ------------------------------------------------------------------------------------------ |
-|  1 | Two Sum                          | Easy       | Hash Map                   | [View Solution](src/main/java/com/Tushar/dsajava/arrays/twosum)                           |
-|  2 | Best Time to Buy and Sell Stock  | Easy       | One Pass                   | [View Solution](src/main/java/com/Tushar/dsajava/arrays/besttimebuyandsellstock)           |
-|  3 | Maximum Subarray                 | Medium     | Kadane's Algorithm         | [View Solution](src/main/java/com/Tushar/dsajava/arrays/maximumsubarray)                  |
-|  4 | Contains Duplicate               | Easy       | Hash Set                   | [View Solution](src/main/java/com/Tushar/dsajava/arrays/containsduplicate)                |
-|  5 | Product of Array Except Self     | Medium     | Prefix / Suffix Product    | [View Solution](src/main/java/com/Tushar/dsajava/arrays/productofarrayexceptself)         |
-|  6 | Top K Frequent Elements          | Medium     | HashMap + Bucket Sort      | [View Solution](src/main/java/com/Tushar/dsajava/arrays/topkfrequentelements)             |
-|  7 | Valid Anagram                    | Easy       | Frequency Map              | [View Solution](src/main/java/com/Tushar/dsajava/strings/validanagram)                    |
-|  8 | Group Anagrams                   | Medium     | HashMap + Character Freq.  | [View Solution](src/main/java/com/Tushar/dsajava/strings/groupanagrams)                   |
-|  9 | Valid Palindrome                 | Easy       | Two Pointers               | [View Solution](src/main/java/com/Tushar/dsajava/strings/validpalindrome)                 |
+|  # | Problem                         | Difficulty | Pattern                              | Solution                                                                                  |
+| -: | -------------------------------- | ---------- | ------------------------------------ | ------------------------------------------------------------------------------------------ |
+|  1 | Two Sum                          | Easy       | Hash Map                             | [View Solution](src/main/java/com/Tushar/dsajava/arrays/twosum)                           |
+|  2 | Best Time to Buy and Sell Stock  | Easy       | One Pass                             | [View Solution](src/main/java/com/Tushar/dsajava/arrays/besttimebuyandsellstock)           |
+|  3 | Maximum Subarray                 | Medium     | Kadane's Algorithm                   | [View Solution](src/main/java/com/Tushar/dsajava/arrays/maximumsubarray)                  |
+|  4 | Contains Duplicate               | Easy       | Hash Set                             | [View Solution](src/main/java/com/Tushar/dsajava/arrays/containsduplicate)                |
+|  5 | Product of Array Except Self     | Medium     | Prefix / Suffix Product              | [View Solution](src/main/java/com/Tushar/dsajava/arrays/productofarrayexceptself)         |
+|  6 | Top K Frequent Elements          | Medium     | HashMap + Bucket Sort                | [View Solution](src/main/java/com/Tushar/dsajava/arrays/topkfrequentelements)             |
+|  7 | Valid Anagram                    | Easy       | Frequency Map                        | [View Solution](src/main/java/com/Tushar/dsajava/strings/validanagram)                    |
+|  8 | Group Anagrams                   | Medium     | HashMap + Character Freq.            | [View Solution](src/main/java/com/Tushar/dsajava/strings/groupanagrams)                   |
+|  9 | Valid Palindrome                 | Easy       | Two Pointers                         | [View Solution](src/main/java/com/Tushar/dsajava/strings/validpalindrome)                 |
+| 10 | Reverse Linked List              | Easy       | In-Place Reversal                    | [View Solution](src/main/java/com/Tushar/dsajava/linkedlist/reverselinkedlist)            |
+| 11 | Detect Cycle in Linked List      | Easy       | Fast and Slow Pointers               | [View Solution](src/main/java/com/Tushar/dsajava/linkedlist/detectcycle)                  |
+| 12 | Merge Two Sorted Lists           | Easy       | Two Pointers                         | [View Solution](src/main/java/com/Tushar/dsajava/linkedlist/mergetwosortedlists)          |
+| 13 | Remove Nth Node From End of List | Medium     | Two Pointers (Gap)                   | [View Solution](src/main/java/com/Tushar/dsajava/linkedlist/removenthnode)               |
+| 14 | Intersection of Two Linked Lists | Easy       | Two Pointers (Switching)             | [View Solution](src/main/java/com/Tushar/dsajava/linkedlist/intersectionoflinkedlists)   |
+| 15 | Valid Parentheses                | Easy       | Stack (LIFO Matching)                | [View Solution](src/main/java/com/Tushar/dsajava/stack/validparentheses)                  |
+| 16 | Min Stack                        | Medium     | Auxiliary Stack / Invariant Tracking | [View Solution](src/main/java/com/Tushar/dsajava/stack/minstack)                          |
+| 17 | Daily Temperatures               | Medium     | Monotonic Decreasing Stack           | [View Solution](src/main/java/com/Tushar/dsajava/stack/dailytemperatures)                 |
 
 ---
 
@@ -120,6 +128,78 @@ Uses pointers from both ends of a string and moves them toward the center.
 
 ---
 
+## Linked Lists
+
+### In-Place Reversal
+
+Reverses pointer directions iteratively during traversal without allocating extra nodes.
+
+**Problem:**
+
+* Reverse Linked List
+
+### Fast and Slow Pointers
+
+Uses two pointers moving at different speeds (Floyd's Cycle-Finding Algorithm) to detect cycles without additional memory.
+
+**Problem:**
+
+* Detect Cycle in Linked List
+
+### Two Pointers
+
+Compares nodes from two sorted lists simultaneously and splices them in sorted order.
+
+**Problem:**
+
+* Merge Two Sorted Lists
+
+### Two Pointers (Gap Strategy)
+
+Maintains a fixed gap of `n` nodes between two pointers to locate and remove a target node from the end of the list in a single pass.
+
+**Problem:**
+
+* Remove Nth Node From End of List
+
+### Two Pointers (Pointer Switching)
+
+Traverses two lists and switches heads upon reaching the end, equalizing traversal distances to identify the intersection node without hash sets.
+
+**Problem:**
+
+* Intersection of Two Linked Lists
+
+---
+
+## Stacks
+
+### Stack (LIFO Matching)
+
+Matches pairs in Last-In-First-Out order, verifying that the most recently opened symbol is closed first.
+
+**Problem:**
+
+* Valid Parentheses
+
+### Auxiliary Stack / Invariant Tracking
+
+Maintains a parallel stack of minimum values to track minimum state across push and pop operations in O(1) time.
+
+**Problem:**
+
+* Min Stack
+
+### Monotonic Decreasing Stack
+
+Maintains indices of unresolved elements whose values are in descending order. When a larger element is encountered, previous elements are popped and resolved in O(1) amortized time per element.
+
+**Problem:**
+
+* Daily Temperatures
+
+---
+
 # 📁 Project Structure
 
 ```text
@@ -134,42 +214,28 @@ dsa-java/
 │   │                   │
 │   │                   ├── arrays/
 │   │                   │   ├── twosum/
-│   │                   │   │   ├── Solution.java
-│   │                   │   │   ├── BruteForceSolution.java
-│   │                   │   │   └── README.md
-│   │                   │   │
 │   │                   │   ├── besttimebuyandsellstock/
-│   │                   │   │   ├── Solution.java
-│   │                   │   │   └── README.md
-│   │                   │   │
 │   │                   │   ├── maximumsubarray/
-│   │                   │   │   ├── Solution.java
-│   │                   │   │   └── README.md
-│   │                   │   │
 │   │                   │   ├── containsduplicate/
-│   │                   │   │   ├── Solution.java
-│   │                   │   │   └── README.md
-│   │                   │   │
 │   │                   │   ├── productofarrayexceptself/
-│   │                   │   │   ├── Solution.java
-│   │                   │   │   └── README.md
-│   │                   │   │
 │   │                   │   └── topkfrequentelements/
-│   │                   │       ├── Solution.java
-│   │                   │       └── README.md
 │   │                   │
-│   │                   └── strings/
-│   │                       ├── validanagram/
-│   │                       │   ├── Solution.java
-│   │                       │   └── README.md
-│   │                       │
-│   │                       ├── groupanagrams/
-│   │                       │   ├── Solution.java
-│   │                       │   └── README.md
-│   │                       │
-│   │                       └── validpalindrome/
-│   │                           ├── Solution.java
-│   │                           └── README.md
+│   │                   ├── strings/
+│   │                   │   ├── validanagram/
+│   │                   │   ├── groupanagrams/
+│   │                   │   └── validpalindrome/
+│   │                   │
+│   │                   ├── linkedlist/
+│   │                   │   ├── reverselinkedlist/
+│   │                   │   ├── detectcycle/
+│   │                   │   ├── mergetwosortedlists/
+│   │                   │   ├── removenthnode/
+│   │                   │   └── intersectionoflinkedlists/
+│   │                   │
+│   │                   └── stack/
+│   │                       ├── validparentheses/
+│   │                       ├── minstack/
+│   │                       └── dailytemperatures/
 │   │
 │   └── test/
 │       └── java/
@@ -177,7 +243,9 @@ dsa-java/
 │               └── Tushar/
 │                   └── dsajava/
 │                       ├── arrays/
-│                       └── strings/
+│                       ├── strings/
+│                       ├── linkedlist/
+│                       └── stack/
 │
 ├── README.md
 ├── pom.xml
@@ -199,7 +267,9 @@ The repository is organized by DSA category:
 ```text
 com.Tushar.dsajava
 ├── arrays
-└── strings
+├── strings
+├── linkedlist
+└── stack
 ```
 
 This avoids maintaining multiple package roots and keeps the Java project consistent as more problems are added.
@@ -211,11 +281,10 @@ This avoids maintaining multiple package roots and keeps the Java project consis
 Each problem contains its own `README.md` with:
 
 1. Problem
-2. Approach
-3. Why This Approach?
-4. Time Complexity
-5. Space Complexity
-6. Edge Cases
+2. Pattern
+3. Approach
+4. Complexity (Time & Space)
+5. Important Edge Cases
 
 This makes every solution independently understandable and interview-ready.
 
@@ -243,7 +312,7 @@ Run all tests using:
 Expected result:
 
 ```text
-Tests run: ...
+Tests run: 102
 Failures: 0
 Errors: 0
 Skipped: 0
@@ -263,10 +332,6 @@ Finds two numbers in an array whose sum equals a given target. Both a brute-forc
 (O(n²)) and an optimized hash-map version (O(n)) are implemented, to make the
 before/after trade-off explicit.
 
-**Key idea:**
-
-Store previously seen values in a hash map and check whether the required complement already exists.
-
 **Complexity:**
 
 ```text
@@ -280,11 +345,7 @@ Space → O(n)
 
 **Pattern:** One Pass
 
-Finds the maximum profit from buying and selling a stock once.
-
-**Key idea:**
-
-Maintain the minimum price seen so far and calculate the maximum possible profit at every position.
+Finds the maximum profit from buying and selling a stock once by maintaining the minimum price seen so far.
 
 **Complexity:**
 
@@ -299,11 +360,7 @@ Space → O(1)
 
 **Pattern:** Kadane's Algorithm
 
-Finds the contiguous subarray with the largest sum.
-
-**Key idea:**
-
-At every element, decide whether to extend the current subarray or start a new one.
+Finds the contiguous subarray with the largest sum using dynamic programming / Kadane's single pass.
 
 **Complexity:**
 
@@ -318,11 +375,7 @@ Space → O(1)
 
 **Pattern:** Hash Set
 
-Determines whether any value appears more than once in an array.
-
-**Key idea:**
-
-Add each number to a hash set; if a number is already present, a duplicate exists.
+Determines whether any value appears more than once in an array using constant-time set lookups.
 
 **Complexity:**
 
@@ -337,28 +390,14 @@ Space → O(n)
 
 **Pattern:** Prefix / Suffix Product
 
-Returns an array where each element equals the product of all other elements,
-without using division.
-
-**Key idea:**
-
-Traverse the array once left-to-right, building a running prefix product per index.
-Then traverse right-to-left, multiplying in a running suffix product. This combines
-both halves in two linear passes.
+Calculates product of all elements except self in two passes without division.
 
 **Complexity:**
 
 ```text
 Time  → O(n)
-Space → O(1) extra, excluding the output array
+Space → O(1) extra (excluding output array)
 ```
-
-### Important Edge Cases
-
-* Array containing a single zero
-* Array containing multiple zeros
-* Negative numbers
-* Single-element and two-element arrays
 
 ---
 
@@ -366,12 +405,7 @@ Space → O(1) extra, excluding the output array
 
 **Pattern:** HashMap + Bucket Sort
 
-Returns the `k` most frequently occurring elements from an integer array.
-
-**Key idea:**
-
-Count element frequencies with a HashMap, then use a bucket array indexed by frequency.
-Iterate the buckets from high to low, collecting elements until `k` are found.
+Finds the `k` most frequent elements using frequency counts mapped to bucket indices in O(n) time.
 
 **Complexity:**
 
@@ -380,26 +414,13 @@ Time  → O(n)
 Space → O(n)
 ```
 
-### Important Edge Cases
-
-* `k` equals the number of unique elements
-* Single-element array
-* Negative numbers
-* All elements have equal frequency
-
 ---
 
 ## 7. Valid Anagram
 
 **Pattern:** Frequency Map
 
-Determines whether two strings contain the same characters with the same frequencies.
-
-**Key idea:**
-
-Count the frequency of every character in the first string and decrement those frequencies while processing the second string.
-
-A length check is performed first to immediately reject strings of different lengths.
+Determines whether two strings are anagrams of each other using character counts.
 
 **Complexity:**
 
@@ -408,27 +429,13 @@ Time  → O(n)
 Space → O(k)
 ```
 
-where `k` represents the number of distinct characters.
-
-### Important Edge Cases
-
-* Different-length strings
-* Empty strings
-* Single characters
-* Different character frequencies
-
 ---
 
 ## 8. Group Anagrams
 
 **Pattern:** HashMap + Character Frequency
 
-Groups strings that are anagrams of each other into separate lists.
-
-**Key idea:**
-
-For each string, build a 26-character frequency array and encode it as a canonical key.
-All anagrams share the same key and are grouped under the same HashMap entry.
+Groups anagrams together using character frequency signatures as map keys.
 
 **Complexity:**
 
@@ -437,33 +444,13 @@ Time  → O(n · m)
 Space → O(n · m)
 ```
 
-where `n` is the number of strings and `m` is the average string length.
-
-### Important Edge Cases
-
-* Empty input array
-* Single word
-* All words are anagrams of each other
-* No words share characters
-
 ---
 
 ## 9. Valid Palindrome
 
 **Pattern:** Two Pointers
 
-Determines whether a string is a palindrome after ignoring non-alphanumeric characters and letter case.
-
-**Key idea:**
-
-Use two pointers:
-
-```text
-left  → beginning
-right → end
-```
-
-Skip non-alphanumeric characters from both sides and compare the remaining characters.
+Validates whether a string is a palindrome after ignoring non-alphanumeric characters.
 
 **Complexity:**
 
@@ -472,54 +459,149 @@ Time  → O(n)
 Space → O(1)
 ```
 
-### Important Edge Cases
+---
 
-* Empty string
-* Single character
-* Mixed case
-* Spaces
-* Punctuation
-* String containing only punctuation
+## 10. Reverse Linked List
 
-Example:
+**Pattern:** In-Place Reversal
+
+Reverses a singly linked list in a single iterative pass by redirecting next pointers.
+
+**Complexity:**
 
 ```text
-A man, a plan, a canal: Panama
+Time  → O(n)
+Space → O(1)
 ```
 
-returns:
+---
+
+## 11. Detect Cycle in Linked List
+
+**Pattern:** Fast and Slow Pointers (Floyd's Algorithm)
+
+Detects if a linked list contains a cycle using slow (1 step) and fast (2 steps) pointers.
+
+**Complexity:**
 
 ```text
-true
+Time  → O(n)
+Space → O(1)
 ```
 
-while:
+---
+
+## 12. Merge Two Sorted Lists
+
+**Pattern:** Two Pointers
+
+Merges two sorted linked lists into a single sorted list using a dummy head and pointer comparison.
+
+**Complexity:**
 
 ```text
-race a car
+Time  → O(n + m)
+Space → O(1)
 ```
 
-returns:
+---
+
+## 13. Remove Nth Node From End of List
+
+**Pattern:** Two Pointers (Gap Strategy)
+
+Maintains an `n`-step gap between two pointers to remove the target node from the end in a single pass.
+
+**Complexity:**
 
 ```text
-false
+Time  → O(n)
+Space → O(1)
+```
+
+---
+
+## 14. Intersection of Two Linked Lists
+
+**Pattern:** Two Pointers (Switching Heads)
+
+Finds the node where two singly linked lists intersect by redirecting each pointer to the other list's head at termination.
+
+**Complexity:**
+
+```text
+Time  → O(n + m)
+Space → O(1)
+```
+
+---
+
+## 15. Valid Parentheses
+
+**Pattern:** Stack (LIFO Matching)
+
+Validates correct nesting and bracket closure for `'()'`, `'{}'`, and `'[]'` using a stack.
+
+**Complexity:**
+
+```text
+Time  → O(n)
+Space → O(n)
+```
+
+---
+
+## 16. Min Stack
+
+**Pattern:** Auxiliary Stack / Invariant Tracking
+
+Designs a stack supporting `push`, `pop`, `top`, and `getMin` in constant O(1) time using a parallel minimum stack.
+
+**Complexity:**
+
+```text
+Time  → O(1) for all operations
+Space → O(n) auxiliary space
+```
+
+---
+
+## 17. Daily Temperatures
+
+**Pattern:** Monotonic Decreasing Stack
+
+Computes the number of days to wait for a warmer temperature for each day using a stack of indices maintaining strictly descending temperatures.
+
+**Complexity:**
+
+```text
+Time  → O(n)
+Space → O(n)
 ```
 
 ---
 
 # 📊 Complexity Summary
 
-| Problem                         |    Time |    Space | Pattern                    |
-| -------------------------------- | ------: | -------: | -------------------------- |
-| Two Sum                          |    O(n) |     O(n) | Hash Map                   |
-| Best Time to Buy and Sell Stock  |    O(n) |     O(1) | One Pass                   |
-| Maximum Subarray                 |    O(n) |     O(1) | Kadane's Algorithm         |
-| Contains Duplicate               |    O(n) |     O(n) | Hash Set                   |
-| Product of Array Except Self     |    O(n) |     O(1) | Prefix / Suffix Product    |
-| Top K Frequent Elements          |    O(n) |     O(n) | HashMap + Bucket Sort      |
-| Valid Anagram                    |    O(n) |     O(k) | Frequency Map              |
-| Group Anagrams                   | O(n·m)  |   O(n·m) | HashMap + Char. Frequency  |
-| Valid Palindrome                 |    O(n) |     O(1) | Two Pointers               |
+| Problem                         |    Time |    Space | Pattern                              |
+| -------------------------------- | ------: | -------: | ------------------------------------ |
+| Two Sum                          |    O(n) |     O(n) | Hash Map                             |
+| Best Time to Buy and Sell Stock  |    O(n) |     O(1) | One Pass                             |
+| Maximum Subarray                 |    O(n) |     O(1) | Kadane's Algorithm                   |
+| Contains Duplicate               |    O(n) |     O(n) | Hash Set                             |
+| Product of Array Except Self     |    O(n) |     O(1) | Prefix / Suffix Product              |
+| Top K Frequent Elements          |    O(n) |     O(n) | HashMap + Bucket Sort                |
+| Valid Anagram                    |    O(n) |     O(k) | Frequency Map                        |
+| Group Anagrams                   | O(n·m)  |   O(n·m) | HashMap + Char. Frequency            |
+| Valid Palindrome                 |    O(n) |     O(1) | Two Pointers                         |
+| Reverse Linked List              |    O(n) |     O(1) | In-Place Reversal                    |
+| Detect Cycle in Linked List      |    O(n) |     O(1) | Fast and Slow Pointers               |
+| Merge Two Sorted Lists           |  O(n+m) |     O(1) | Two Pointers                         |
+| Remove Nth Node From End of List |    O(n) |     O(1) | Two Pointers (Gap)                   |
+| Intersection of Two Linked Lists |  O(n+m) |     O(1) | Two Pointers (Switching)             |
+| Valid Parentheses                |    O(n) |     O(n) | Stack (LIFO Matching)                |
+| Min Stack                        |    O(1) |     O(n) | Auxiliary Stack / Invariant Tracking |
+| Daily Temperatures               |    O(n) |     O(n) | Monotonic Decreasing Stack           |
 
 ---
 
@@ -542,8 +624,6 @@ The repository will progressively cover the major DSA patterns and data structur
 Arrays
   ↓
 Strings
-  ↓
-Hashing
   ↓
 Linked Lists
   ↓
@@ -585,18 +665,27 @@ Advanced Algorithms
 * [x] Group Anagrams
 * [x] Valid Palindrome
 
+### Linked Lists
+
+* [x] Reverse Linked List
+* [x] Detect Cycle in Linked List
+* [x] Merge Two Sorted Lists
+* [x] Remove Nth Node From End of List
+* [x] Intersection of Two Linked Lists
+
+### Stacks & Queues
+
+* [x] Valid Parentheses
+* [x] Min Stack
+* [x] Daily Temperatures
+
 ### Upcoming
 
-* [ ] More Hashing Problems
-* [ ] Linked Lists
-* [ ] Stacks
-* [ ] Queues
 * [ ] Binary Search
-* [ ] Trees
-* [ ] Heaps
+* [ ] Trees & Binary Search Trees
+* [ ] Heaps / Priority Queues
 * [ ] Graphs
-* [ ] Recursion
-* [ ] Backtracking
+* [ ] Recursion & Backtracking
 * [ ] Dynamic Programming
 
 ---
