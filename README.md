@@ -40,6 +40,8 @@ The repository follows a progressive approach from fundamental array problems to
 | 15 | Valid Parentheses                | Easy       | Stack (LIFO Matching)                | [View Solution](src/main/java/com/Tushar/dsajava/stack/validparentheses)                  |
 | 16 | Min Stack                        | Medium     | Auxiliary Stack / Invariant Tracking | [View Solution](src/main/java/com/Tushar/dsajava/stack/minstack)                          |
 | 17 | Daily Temperatures               | Medium     | Monotonic Decreasing Stack           | [View Solution](src/main/java/com/Tushar/dsajava/stack/dailytemperatures)                 |
+| 18 | Evaluate Reverse Polish Notation | Medium     | Stack (Postfix Evaluation)           | [View Solution](src/main/java/com/Tushar/dsajava/stack/reversenotation)                    |
+| 19 | Implement Queue using Stacks     | Easy       | Two Stacks / Lazy Amortization       | [View Solution](src/main/java/com/Tushar/dsajava/queue/implementqueueusingstacks)        |
 
 ---
 
@@ -198,6 +200,26 @@ Maintains indices of unresolved elements whose values are in descending order. W
 
 * Daily Temperatures
 
+### Stack (Postfix Evaluation)
+
+Evaluates arithmetic expressions written in Reverse Polish Notation by managing operands on a stack and computing results sequentially.
+
+**Problem:**
+
+* Evaluate Reverse Polish Notation
+
+---
+
+## Queues
+
+### Two Stacks / Lazy Amortization
+
+Simulates FIFO queue behavior using two LIFO stacks (`inStack` and `outStack`), transferring elements lazily to provide amortized O(1) operations.
+
+**Problem:**
+
+* Implement Queue using Stacks
+
 ---
 
 # 📁 Project Structure
@@ -232,10 +254,14 @@ dsa-java/
 │   │                   │   ├── removenthnode/
 │   │                   │   └── intersectionoflinkedlists/
 │   │                   │
-│   │                   └── stack/
-│   │                       ├── validparentheses/
-│   │                       ├── minstack/
-│   │                       └── dailytemperatures/
+│   │                   ├── stack/
+│   │                   │   ├── validparentheses/
+│   │                   │   ├── minstack/
+│   │                   │   ├── dailytemperatures/
+│   │                   │   └── reversenotation/
+│   │                   │
+│   │                   └── queue/
+│   │                       └── implementqueueusingstacks/
 │   │
 │   └── test/
 │       └── java/
@@ -245,7 +271,8 @@ dsa-java/
 │                       ├── arrays/
 │                       ├── strings/
 │                       ├── linkedlist/
-│                       └── stack/
+│                       ├── stack/
+│                       └── queue/
 │
 ├── README.md
 ├── pom.xml
@@ -269,7 +296,8 @@ com.Tushar.dsajava
 ├── arrays
 ├── strings
 ├── linkedlist
-└── stack
+├── stack
+└── queue
 ```
 
 This avoids maintaining multiple package roots and keeps the Java project consistent as more problems are added.
@@ -312,7 +340,7 @@ Run all tests using:
 Expected result:
 
 ```text
-Tests run: 102
+Tests run: 127
 Failures: 0
 Errors: 0
 Skipped: 0
@@ -581,6 +609,36 @@ Space → O(n)
 
 ---
 
+## 18. Evaluate Reverse Polish Notation
+
+**Pattern:** Stack (Postfix Evaluation)
+
+Evaluates arithmetic expressions in Reverse Polish Notation (RPN) using an operand stack and operator dispatch.
+
+**Complexity:**
+
+```text
+Time  → O(n)
+Space → O(n)
+```
+
+---
+
+## 19. Implement Queue using Stacks
+
+**Pattern:** Two Stacks / Lazy Amortization
+
+Implements a FIFO queue using two stacks (`inStack` for enqueue, `outStack` for dequeue/peek) with lazy element transfer.
+
+**Complexity:**
+
+```text
+Time  → O(1) amortized
+Space → O(n)
+```
+
+---
+
 # 📊 Complexity Summary
 
 | Problem                         |    Time |    Space | Pattern                              |
@@ -602,6 +660,8 @@ Space → O(n)
 | Valid Parentheses                |    O(n) |     O(n) | Stack (LIFO Matching)                |
 | Min Stack                        |    O(1) |     O(n) | Auxiliary Stack / Invariant Tracking |
 | Daily Temperatures               |    O(n) |     O(n) | Monotonic Decreasing Stack           |
+| Evaluate Reverse Polish Notation |    O(n) |     O(n) | Stack (Postfix Evaluation)           |
+| Implement Queue using Stacks     | O(1) am.|     O(n) | Two Stacks / Lazy Amortization       |
 
 ---
 
@@ -678,6 +738,8 @@ Advanced Algorithms
 * [x] Valid Parentheses
 * [x] Min Stack
 * [x] Daily Temperatures
+* [x] Evaluate Reverse Polish Notation
+* [x] Implement Queue using Stacks
 
 ### Upcoming
 
