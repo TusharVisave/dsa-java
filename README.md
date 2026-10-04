@@ -42,6 +42,7 @@ The repository follows a progressive approach from fundamental array problems to
 | 17 | Daily Temperatures               | Medium     | Monotonic Decreasing Stack           | [View Solution](src/main/java/com/Tushar/dsajava/stack/dailytemperatures)                 |
 | 18 | Evaluate Reverse Polish Notation | Medium     | Stack (Postfix Evaluation)           | [View Solution](src/main/java/com/Tushar/dsajava/stack/reversenotation)                    |
 | 19 | Implement Queue using Stacks     | Easy       | Two Stacks / Lazy Amortization       | [View Solution](src/main/java/com/Tushar/dsajava/queue/implementqueueusingstacks)        |
+| 20 | Invert Binary Tree               | Easy       | DFS / Divide and Conquer             | [View Solution](src/main/java/com/Tushar/dsajava/trees/invertbinarytree)                  |
 
 ---
 
@@ -222,6 +223,18 @@ Simulates FIFO queue behavior using two LIFO stacks (`inStack` and `outStack`), 
 
 ---
 
+## Trees
+
+### Depth-First Search (DFS) / Divide and Conquer
+
+Recursively decomposes a tree into subproblems by operating on left and right subtrees independently and recombining their results (swapping child pointers).
+
+**Problem:**
+
+* Invert Binary Tree
+
+---
+
 # 📁 Project Structure
 
 ```text
@@ -260,8 +273,11 @@ dsa-java/
 │   │                   │   ├── dailytemperatures/
 │   │                   │   └── reversenotation/
 │   │                   │
-│   │                   └── queue/
-│   │                       └── implementqueueusingstacks/
+│   │                   ├── queue/
+│   │                   │   └── implementqueueusingstacks/
+│   │                   │
+│   │                   └── trees/
+│   │                       └── invertbinarytree/
 │   │
 │   └── test/
 │       └── java/
@@ -272,7 +288,8 @@ dsa-java/
 │                       ├── strings/
 │                       ├── linkedlist/
 │                       ├── stack/
-│                       └── queue/
+│                       ├── queue/
+│                       └── trees/
 │
 ├── README.md
 ├── pom.xml
@@ -297,7 +314,8 @@ com.Tushar.dsajava
 ├── strings
 ├── linkedlist
 ├── stack
-└── queue
+├── queue
+└── trees
 ```
 
 This avoids maintaining multiple package roots and keeps the Java project consistent as more problems are added.
@@ -340,7 +358,7 @@ Run all tests using:
 Expected result:
 
 ```text
-Tests run: 127
+Tests run: 136
 Failures: 0
 Errors: 0
 Skipped: 0
@@ -639,6 +657,21 @@ Space → O(n)
 
 ---
 
+## 20. Invert Binary Tree
+
+**Pattern:** Depth-First Search (DFS) / Divide and Conquer
+
+Recursively swaps the left and right subtrees for every node in the binary tree, with an iterative BFS alternative using a queue to avoid recursion stack overflow.
+
+**Complexity:**
+
+```text
+Time  → O(n)
+Space → O(h) recursive / O(w) iterative
+```
+
+---
+
 # 📊 Complexity Summary
 
 | Problem                         |    Time |    Space | Pattern                              |
@@ -662,6 +695,7 @@ Space → O(n)
 | Daily Temperatures               |    O(n) |     O(n) | Monotonic Decreasing Stack           |
 | Evaluate Reverse Polish Notation |    O(n) |     O(n) | Stack (Postfix Evaluation)           |
 | Implement Queue using Stacks     | O(1) am.|     O(n) | Two Stacks / Lazy Amortization       |
+| Invert Binary Tree               |    O(n) |     O(h) | DFS / Divide and Conquer             |
 
 ---
 
@@ -741,10 +775,14 @@ Advanced Algorithms
 * [x] Evaluate Reverse Polish Notation
 * [x] Implement Queue using Stacks
 
+### Trees
+
+* [x] Invert Binary Tree
+
 ### Upcoming
 
 * [ ] Binary Search
-* [ ] Trees & Binary Search Trees
+* [ ] Binary Search Trees
 * [ ] Heaps / Priority Queues
 * [ ] Graphs
 * [ ] Recursion & Backtracking
