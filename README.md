@@ -43,6 +43,7 @@ The repository follows a progressive approach from fundamental array problems to
 | 18 | Evaluate Reverse Polish Notation | Medium     | Stack (Postfix Evaluation)           | [View Solution](src/main/java/com/Tushar/dsajava/stack/reversenotation)                    |
 | 19 | Implement Queue using Stacks     | Easy       | Two Stacks / Lazy Amortization       | [View Solution](src/main/java/com/Tushar/dsajava/queue/implementqueueusingstacks)        |
 | 20 | Invert Binary Tree               | Easy       | DFS / Divide and Conquer             | [View Solution](src/main/java/com/Tushar/dsajava/trees/invertbinarytree)                  |
+| 21 | Maximum Depth of Binary Tree    | Easy       | DFS / Post-order & BFS Level-Order   | [View Solution](src/main/java/com/Tushar/dsajava/trees/maximumdepthofbinarytree)         |
 
 ---
 
@@ -233,6 +234,14 @@ Recursively decomposes a tree into subproblems by operating on left and right su
 
 * Invert Binary Tree
 
+### Breadth-First Search (BFS) / Level-Order & DFS Depth Calculation
+
+Calculates the height/depth of a tree by either recursively solving subproblems (`1 + max(left, right)`) or iteratively processing each tree level using a FIFO queue.
+
+**Problem:**
+
+* Maximum Depth of Binary Tree
+
 ---
 
 # 📁 Project Structure
@@ -277,7 +286,8 @@ dsa-java/
 │   │                   │   └── implementqueueusingstacks/
 │   │                   │
 │   │                   └── trees/
-│   │                       └── invertbinarytree/
+│   │                       ├── invertbinarytree/
+│   │                       └── maximumdepthofbinarytree/
 │   │
 │   └── test/
 │       └── java/
@@ -696,6 +706,7 @@ Space → O(h) recursive / O(w) iterative
 | Evaluate Reverse Polish Notation |    O(n) |     O(n) | Stack (Postfix Evaluation)           |
 | Implement Queue using Stacks     | O(1) am.|     O(n) | Two Stacks / Lazy Amortization       |
 | Invert Binary Tree               |    O(n) |     O(h) | DFS / Divide and Conquer             |
+| Maximum Depth of Binary Tree    |    O(n) |     O(h) | DFS (Post-order) / BFS (Level-Order) |
 
 ---
 
@@ -778,6 +789,7 @@ Advanced Algorithms
 ### Trees
 
 * [x] Invert Binary Tree
+* [x] Maximum Depth of Binary Tree
 
 ### Upcoming
 
